@@ -2,6 +2,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useCallback, useMemo, useRef} from 'react';
 import BottomSheet, {BottomSheetFlatList} from '@gorhom/bottom-sheet';
 import Colors from '../../constants/Colors';
+import textStyles from '../../styles/textStyles';
 import TRANSACTIONS from './data';
 import TransactionItem from './TransactionItem';
 import {ArrowDown} from '../../constants/SvgIcons';
@@ -28,14 +29,16 @@ const TransactionBSheet = () => {
       backgroundStyle={styles.backgroundStyle}>
       <View style={styles.contentContainer}>
         <View style={styles.sheetHeader}>
-          <Text style={{fontSize: 16, fontWeight: '500'}}>
+          <Text style={{...textStyles.subHeading, fontWeight: '500'}}>
             All Transactions
           </Text>
 
           <View style={styles.row}>
-            <Text style={{marginRight: 10, color: '#4E589F'}}>Sort by:</Text>
+            <Text style={{marginRight: 10, color: Colors.textViolet}}>
+              Sort by:
+            </Text>
             <TouchableOpacity style={styles.row}>
-              <Text style={{fontSize: 14}}>Recent</Text>
+              <Text style={textStyles.regular}>Recent</Text>
               <ArrowDown style={{marginTop: 3, marginLeft: 5}} />
             </TouchableOpacity>
           </View>

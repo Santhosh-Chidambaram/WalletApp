@@ -4,6 +4,7 @@ const Colors = {
   card: '#17288E',
   buttonLight: '#212A6B',
   buttonText: '#426DDC',
+  textViolet: '#4E589F',
   buttonText1: '#464E8A',
   border: '#464E8A',
   received: '#1DC7AC',

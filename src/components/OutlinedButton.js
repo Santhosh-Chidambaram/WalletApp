@@ -14,7 +14,7 @@ export default OutlinedButton;
 
 const styles = StyleSheet.create({
   outlinedButton: {
-    width: 160,
+    width: 155,
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',

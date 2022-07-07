@@ -7,6 +7,7 @@ import ContainedButton from '../../components/ContainedButton';
 import OutlinedButton from '../../components/OutlinedButton';
 import TransactionBSheet from './TransactionBSheet';
 import Routes from '../../navigators/Routes';
+import textStyles from '../../styles/textStyles';
 
 const HomeScreen = ({navigation}) => {
   const navigateToNewRequest = () => {
@@ -22,17 +23,15 @@ const HomeScreen = ({navigation}) => {
       style={{
         marginTop: 48,
       }}>
-      <Text style={{color: 'white', fontSize: 12, marginBottom: 16}}>
+      <Text style={{...textStyles.textSm, marginBottom: 16}}>
         Your current balance is
       </Text>
-      <View style={styles.row}>
-        <MoneyIcon color="white" />
+      <View style={layoutStyles.row}>
+        <MoneyIcon color="white" style={{marginTop: 5}} />
         <Text
           style={{
             marginLeft: 5,
-            fontSize: 40,
-            color: 'white',
-            fontWeight: '700',
+            ...textStyles.h1,
           }}>
           200,000
         </Text>
@@ -41,12 +40,13 @@ const HomeScreen = ({navigation}) => {
   );
 
   const renderHeader = (
-    <View style={[styles.row, {marginTop: 24}]}>
-      <View style={[styles.row, layoutStyles.fill]}>
+    <View style={[layoutStyles.row, {marginTop: 24}]}>
+      <View style={[layoutStyles.row, layoutStyles.fill]}>
         <IconButton>
           <HammenuIcon />
         </IconButton>
-        <Text style={{fontSize: 18, color: 'white', marginLeft: 15}}>
+        <Text
+          style={{...textStyles.heading, fontWeight: '500', marginLeft: 15}}>
           Hello Sandra,
         </Text>
       </View>
@@ -69,7 +69,7 @@ const HomeScreen = ({navigation}) => {
       style={[
         layoutStyles.fill,
         {
-          paddingHorizontal: 16,
+          paddingHorizontal: 18,
         },
       ]}>
       {renderHeader}
@@ -83,10 +83,6 @@ const HomeScreen = ({navigation}) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   rowSb: {
     marginTop: 30,
     flexDirection: 'row',

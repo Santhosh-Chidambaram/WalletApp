@@ -9,6 +9,7 @@ const layoutStyles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
   alignCenter: {
     alignItems: 'center',

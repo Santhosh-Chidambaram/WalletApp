@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   recevied: {
-    width: 94,
+    width: 100,
     height: 26,
     flexDirection: 'row',
     alignItems: 'center',
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   failed: {
-    width: 75,
+    width: 80,
     height: 26,
     flexDirection: 'row',
     alignItems: 'center',
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   sent: {
-    width: 65,
+    width: 70,
     height: 26,
     flexDirection: 'row',
     alignItems: 'center',
@@ -72,5 +72,6 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     paddingBottom: 2,
+    color: 'white',
   },
 });

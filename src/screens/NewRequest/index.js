@@ -13,6 +13,7 @@ import {ArrowBack} from '../../constants/SvgIcons';
 import USERS from './users';
 import UserItem from './UserItem';
 import SelectedUserSheet from './SelectedUserSheet';
+import textStyles from '../../styles/textStyles';
 
 const {width} = Dimensions.get('screen');
 
@@ -63,7 +64,7 @@ const NewRequest = ({navigation}) => {
         onPress={goBack}
         style={[layoutStyles.row, layoutStyles.alignCenter, {marginRight: 15}]}>
         <ArrowBack />
-        <Text style={{marginLeft: 5}}>Back</Text>
+        <Text style={{marginLeft: 5, ...textStyles.regular}}>Back</Text>
       </TouchableOpacity>
       <View style={layoutStyles.fill}>
         <TextInput
@@ -72,7 +73,10 @@ const NewRequest = ({navigation}) => {
             const searchUser = USERS.find(user =>
               user.name.toLowerCase().startsWith(txt.toLowerCase()),
             );
-            setSelectedItem(USERS.indexOf(searchUser));
+            const searchIdx = USERS.indexOf(searchUser);
+            if (searchIdx >= 0) {
+              setSelectedItem(searchIdx);
+            }
             setSearchText(txt);
           }}
           style={[styles.search, isFocused ? styles.borderGreen : {}]}
@@ -98,6 +102,7 @@ const NewRequest = ({navigation}) => {
               USERS.map((user, idx) => {
                 return (
                   <View
+                    key={'userItem' + idx}
                     style={{
                       position: 'absolute',
                       left: positions[idx].x - idx * 2,
@@ -137,6 +142,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderWidth: 1,
     borderColor: Colors.backgroundLight,
+    color: 'white',
+    fontFamily: 'Inter',
   },
   borderGreen: {
     borderColor: Colors.received,

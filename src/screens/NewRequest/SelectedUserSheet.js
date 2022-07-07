@@ -3,6 +3,7 @@ import React, {useCallback, useMemo, useRef} from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 import Colors from '../../constants/Colors';
 import ContainedButton from '../../components/ContainedButton';
+import textStyles from '../../styles/textStyles';
 
 const SelectedUserSheet = ({selectedItem}) => {
   const {avatarURL, name, number} = selectedItem;
@@ -39,10 +40,8 @@ const SelectedUserSheet = ({selectedItem}) => {
             resizeMode: 'cover',
           }}
         />
-        <Text style={{fontSize: 20, fontWeight: '500', marginTop: 8}}>
-          {name}
-        </Text>
-        <Text style={{fontSize: 14, fontWeight: '400', marginTop: 10}}>
+        <Text style={{...textStyles.title, marginTop: 8}}>{name}</Text>
+        <Text style={{...textStyles.regular, marginTop: 10}}>
           (+234) 905 1694 275
         </Text>
 
